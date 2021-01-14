@@ -21,3 +21,9 @@ This might be useful if you're not directly including the library in your main X
 ## Mac Catalyst
 
 I left out Mac Catalyst because that target is fairly immature sounding for Rust. It requires a lot more work to get going.
+
+## Important bits
+
+- Apple doesn't support universal libraries with more than 1 platform in it, hence some of the issues coming up with Carthage etc & M1 recently. It only happened to work until M1 complicated things.
+- To aid this I whipped together a script at [mylib/build-platform.sh](mylib/build-platform.sh) that can build a rust staticlib crate by platform, this may be an area to explore a PR to cargo-lipo in future even.
+- For those wanting to produce a shareable pre-built binary framework, I also made [make-xcf.sh](make-xcf.sh) which builds & archives each destination & then combines them all, this can be tweaked to do a full Apple platform framework if your library supports it. This example includes Rust which complicates things beyond macOS &  iOS.

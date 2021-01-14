@@ -1,0 +1,13 @@
+[package]
+name = "mylib"
+version = "0.1.0"
+authors = ["Jeremy Knope <jeremy@astro-hq.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[lib]
+name = "mylib"
+crate-type = ["staticlib", "lib"]

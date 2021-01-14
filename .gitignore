@@ -1,0 +1,5 @@
+mylib/target
+**/.DS_Store
+Archives
+mylib/Cargo.lock
+*.xcframework
